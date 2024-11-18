@@ -1,0 +1,43 @@
+<nav class="navbar">
+    <div class="logo">
+        <img src="/images/logo.svg" alt="Logo">
+    </div>
+    <ul class="list-navbar">
+        <li class="navbar-item"><a href="#">About</a></li>
+        <li class="navbar-item"><a href="#">Services</a></li>
+        <li class="navbar-item"><a href="#">Projects</a></li>
+        <a href="#" class="navbar-item btn-contact">CONTACT</a>
+    </ul>
+</nav>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        margin-bottom: 30px;
+        .list-navbar{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .navbar-item{
+                &.btn-contact {
+                    background: #fff;
+                    color: #000;
+                    text-decoration: none;
+                    font-family: var(--title);
+                    font-weight: bold;
+                    padding: 15px 25px;
+                    border-radius: 25px;
+                }
+                a {
+                    color: var(--White);
+                    text-decoration: none;
+                }
+                list-style: none;
+               font-family: var(--text);
+            }
+        }
+    }
+</style>

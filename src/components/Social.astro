@@ -1,0 +1,96 @@
+---
+
+---
+
+<section class="social">
+    <h2 class="social-title">CLIENTS TESTIMONIALS</h2>
+    <div class="testimonials">
+        <div class="testimonial">
+            <img src="/images/image-emily.jpg"  alt="user" class="client-image"></img>
+            <p class="testimonial-description">
+                We put our trust in Sunnyside and they delivered, making our needs were met and deadlines were always hit.
+            </p>
+            <p class="client-info">
+                <strong class="client-name">Emily R.</strong>
+                <small class="client-cargo">Marketing Director</small>
+            </p>
+        </div>
+        <div class="testimonial">
+            <img src="/images/image-thomas.jpg"  alt="user" class="client-image"></img>
+            <p class="testimonial-description">
+                Sunnyside enthusiasm coupled with their keen interest in our brands success made it a satisfying and enjoyable experience.
+            </p>
+            <p class="client-info">
+                <strong class="client-name">Thomas S.</strong>
+                <small class="client-cargo">Chief Operating Officer</small>
+            </p>
+        </div>
+        <div class="testimonial">
+            <img src="/images/image-jennie.jpg"  alt="user" class="client-image"></img>
+            <p class="testimonial-description">
+                Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
+            </p>
+            <p class="client-info">
+                <strong class="client-name">Jennie F.</strong>
+                <small class="client-cargo">Business Owner</small>
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .social {
+        background-color: var(--White);
+        padding: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .social-title {
+            color: var(--Grayish-blue);
+            font-family: var(--title);
+            letter-spacing: 8px;
+            font-size: 20px;
+            margin-bottom: 80px;
+        }
+        .testimonials {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-content: center;
+            gap: 10px;
+            .testimonial {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                padding: 0 22px;
+                .client-image {
+                    width: 70px;
+                    border-radius: 100%;
+                }
+                .testimonial-description {
+                    font-family: var(--text);
+                    color: var(--Very-dark-grayish-blue);
+                    font-weight: 500;
+                    margin-block: 50px;
+                    line-height: 1.7;
+                }
+                .client-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .client-name {
+                        color: var(--Very-dark-desaturated-blue);
+                        font-family: var(--title);
+                    }
+                    .client-cargo {
+                        color: var(--Grayish-blue);
+                        font-family: var(--text);
+                    }
+                }
+            }
+        }
+    }
+</style>
