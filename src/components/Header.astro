@@ -30,16 +30,22 @@ import Navbar from "./Navbar.astro";---
                 animation: 1s floating alternate infinite;
             }
         }
+        h1 {
+            font-family: var(--title);
+            font-size: 3.5rem;
+            text-align: center;
+            letter-spacing: 15px;
+            margin-top: 40px;
+        }
+
+        @media (width < 1030px )  {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
     }
 
-    h1 {
-        font-family: var(--title);
-        font-size: 3.5rem;
-        text-align: center;
-        letter-spacing: 15px;
-        margin-top: 40px;
-    }
-    
     @keyframes floating {
         0% {
             transform: translateY(0);

@@ -1,3 +1,83 @@
 ---
-
+import Logo from "@icons/Logo.astro";
+import Facebook from "@icons/Facebook.astro";
+import Instagram from "@icons/Instagram.astro";
+import Twitter from "@icons/Twitter.astro";
+import Pinterest from "@icons/Pinterest.astro";
 ---
+
+<footer class="footer">
+    <Logo fill="var(--Dark-desaturated-cyan)"/>
+    <ul class="list-footer">
+        <li>
+            <a href="#" class="anchor-foorter">About</a>
+        </li>
+        <li>
+            <a href="#" class="anchor-foorter">Services</a>
+        </li>
+        <li>
+            <a href="#" class="anchor-foorter">Projects</a>
+        </li>
+    </ul>
+    <ul class="list-social-icons-footer">
+        <li>
+            <Facebook />
+        </li>
+        <li>
+            <Instagram />
+        </li>
+        <li>
+            <Twitter />
+        </li>
+        <li>
+            <Pinterest />
+        </li>
+    </ul>
+</footer>
+
+<style>
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 70px 0;
+        background: hsl(166, 53%, 72%);
+
+         > svg {
+            margin-bottom: 40px;
+        }
+
+        .list-footer, .list-social-icons-footer {
+            display: flex;
+            list-style: none;
+        }
+
+        .list-footer {
+            font-size: 18px;
+            gap: 60px;
+            margin-bottom: 80px;
+            a {
+                color: var(--Dark-desaturated-cyan);
+                text-decoration: none;
+                font-family: var(--text);
+                font-weight: 500;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        .list-social-icons-footer {
+            gap: 20px;
+            color: #fff;
+            svg:hover {
+                fill: #fff !important;
+                cursor: pointer;
+            }
+        }
+    }
+</style>
+
+
+

@@ -1,6 +1,10 @@
+---
+import Logo from "@icons/Logo.astro";
+import Hamburger from "@icons/Hamburguer.astro";
+---
 <nav class="navbar">
     <div class="logo">
-        <img src="/images/logo.svg" alt="Logo">
+        <Logo fill="#fff"/>
     </div>
     <ul class="list-navbar">
         <li class="navbar-item"><a href="#">About</a></li>
@@ -8,6 +12,9 @@
         <li class="navbar-item"><a href="#">Projects</a></li>
         <a href="#" class="navbar-item btn-contact">CONTACT</a>
     </ul>
+    <button class="navbar-toggle" type="button">
+        <Hamburger />
+    </button>
 </nav>
 
 <style>
@@ -17,27 +24,97 @@
         align-items: center;
         padding: 30px;
         margin-bottom: 30px;
+        position: relative;
+        /*Mobile Styles*/
+        @media (width < 1030px) {
+            .list-navbar{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                flex-direction: column;
+                width: calc(100% - 60px);
+                margin-inline: 30px;
+                background: #fff;
+                padding: 30px 0;
+                transform: translateX(110%);
+                transition: 0.3s;
+                &.toggle {
+                    transform: translateY(0);
+                }
+                &::after {
+                    --size: 15px;
+                    --bg: white;
+                    content: "";
+                    position: absolute;
+                    display: inline-block;
+                    top: -25px;
+                    right: 0;
+                    border-bottom: var(--size) solid var(--bg);
+                    border-left: var(--size) solid transparent;
+                    border-top: var(--size) solid transparent;
+                    border-right: var(--size) solid var(--bg);
+                }
+                .navbar-item{
+                    &.btn-contact {
+                        background: var(--Yellow) !important;
+                    }
+                    a {
+                        color: var(--Dark-grayish-blue) !important;
+                        font-weight: 500;
+                        font-size: 18px;
+                    }
+
+                }
+            }
+        }
+        .navbar-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            @media (width > 1030px) {
+                display: none;
+            }
+        }
+        /*Desktop Styles*/
         .list-navbar{
             display: flex;
             align-items: center;
+            list-style: none;
+            font-family: var(--text), sans-serif;
             gap: 30px;
             .navbar-item{
                 &.btn-contact {
                     background: #fff;
                     color: #000;
                     text-decoration: none;
-                    font-family: var(--title);
+                    font-family: var(--title), sans-serif;
                     font-weight: bold;
                     padding: 15px 25px;
                     border-radius: 25px;
+                    transition: 0.3s;
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.3);
+                        color: var(--White);
+                    }
                 }
                 a {
                     color: var(--White);
                     text-decoration: none;
                 }
-                list-style: none;
-               font-family: var(--text);
+
             }
         }
     }
 </style>
+
+<script>
+    const buttonToggle: HTMLButtonElement = document.querySelector('.navbar-toggle');
+    const listNavbar: HTMLUListElement = document.querySelector('.list-navbar');
+
+    if (buttonToggle && listNavbar && window.innerWidth < 1030) {
+        buttonToggle.addEventListener('click', () => {
+            listNavbar.classList.toggle('toggle')
+        })
+    }
+
+</script>
